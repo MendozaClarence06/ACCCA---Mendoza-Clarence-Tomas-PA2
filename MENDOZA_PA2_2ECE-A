@@ -1,0 +1,201 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "4e410616-7b84-490b-8c0f-83b56309ff78",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np #call for access library numpy"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6177fe88-9411-4b69-a391-ca84556729cd",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "220d5e95-531e-4ae3-96df-54669ebad7a2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#NORMALIZATION PROBLEM"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "8b91f1b6-d612-45e8-92a2-a89086525103",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "X = np.random.rand (5, 5) #Generates a random 5x5 array. The numbers stored or the values are all random each time it is ran.\n",
+    "mean = X.mean() #Creates the mean for the formula used.\n",
+    "standard = X.std() #Creates the standard deviation variable needed in the formula.\n",
+    "\n",
+    "normalized = (X - mean) / standard #This is the formula itself included in the assignment file.\n",
+    "\n",
+    "np.save(\"X_normalized.npy\", normalized) #Saved file as per instructions."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "id": "71237ded-354a-46eb-a7e3-f20429b4fe67",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The variables used:  [[0.29765311 0.64368904 0.33463641 0.93736575 0.71198734]\n",
+      " [0.71698137 0.25374098 0.75066055 0.62152268 0.59545994]\n",
+      " [0.24961481 0.89321089 0.71771115 0.44777944 0.86612417]\n",
+      " [0.07718917 0.03304961 0.22179147 0.41009073 0.65390703]\n",
+      " [0.4870625  0.48983367 0.18742488 0.65331628 0.60892291]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print (\"The variables used: \", X) #To show the user the variables used."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "29f3b470-2526-4aec-b4c1-b79e5f3c0ef4",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The Normalized X:  [[-0.86913633  0.51825204 -0.72085634  1.69571257  0.79208563]\n",
+      " [ 0.81210858 -1.0451966   0.94714112  0.42937877  0.32488342]\n",
+      " [-1.06173995  1.51867908  0.81503455 -0.26722333  1.41007822]\n",
+      " [-1.75305927 -1.93003138 -1.17329422 -0.41833156  0.5592198 ]\n",
+      " [-0.10972273 -0.09861208 -1.31108279  0.55685127  0.37886151]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print (\"The Normalized X: \", normalized) #To show the user the normalized value of the variables."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4d8f39f2-9539-4b47-bbea-fb77e6bf1a1d",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "id": "c1231730-fbe5-4db9-8704-07a3ba218571",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#DIVISIBLE BY 3 PROBLEM"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "id": "a4009512-5cd9-4546-bbce-07bf245f6f51",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "numbers = np.arange (1, 101) ** 2 #Creates the array in ranges from 1 to 100. *!01 means that it ends there* And **2 for squares of the numbers.\n",
+    "array = numbers.reshape (10, 10) #Reshapes the array from one row to 10x10 column and row.\n",
+    "\n",
+    "modulo = array[array % 3 == 0] #Evaluates the values that are perfectly divisible by 3.\n",
+    "\n",
+    "np.save(\"div_by_3.npy\", modulo) #Save file as for the instruction."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "id": "dd1cd303-a8a7-4d17-ad77-d3c6e53f3fe6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Array formed:  [[    1     4     9    16    25    36    49    64    81   100]\n",
+      " [  121   144   169   196   225   256   289   324   361   400]\n",
+      " [  441   484   529   576   625   676   729   784   841   900]\n",
+      " [  961  1024  1089  1156  1225  1296  1369  1444  1521  1600]\n",
+      " [ 1681  1764  1849  1936  2025  2116  2209  2304  2401  2500]\n",
+      " [ 2601  2704  2809  2916  3025  3136  3249  3364  3481  3600]\n",
+      " [ 3721  3844  3969  4096  4225  4356  4489  4624  4761  4900]\n",
+      " [ 5041  5184  5329  5476  5625  5776  5929  6084  6241  6400]\n",
+      " [ 6561  6724  6889  7056  7225  7396  7569  7744  7921  8100]\n",
+      " [ 8281  8464  8649  8836  9025  9216  9409  9604  9801 10000]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print (\"Array formed: \", array) #To show the squared value of the variables."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "72442774-16a5-4d46-903e-6eed04aff411",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "All divisible by 3:  [   9   36   81  144  225  324  441  576  729  900 1089 1296 1521 1764\n",
+      " 2025 2304 2601 2916 3249 3600 3969 4356 4761 5184 5625 6084 6561 7056\n",
+      " 7569 8100 8649 9216 9801]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print (\"All divisible by 3: \", modulo) #To show the user the numbers divisible by 3 from 1-100 squared."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "02c0d2f1-0a0c-4114-9d67-897b7646a094",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
