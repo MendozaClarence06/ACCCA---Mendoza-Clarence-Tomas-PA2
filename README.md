@@ -28,7 +28,6 @@ Create a 10x10 array ranging from 1-100 with their values squared. From this nda
 "numbers = np.arange (1, 101) ** 2" = This creates an array with numbers ranging from 1-100, this is automatically a 1 row array as the shape is not specified.
 "array = numbers.reshape (10, 10)" - Reshapes the array created earlier to be 10x10.
 "modulo = array[array % 3 == 0]" - Uses the modulo function to get all the numbers divided by 3 and that of without remainders. Uses a type of Boolean slicing.
-"normalized = (X - mean) / standard" - Formula used.
 "np.save("div_by_3.npy", modulo)" - This creates a file that may be used in later dates for modulo problems.
 ```
 
